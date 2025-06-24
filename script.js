@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButtons = document.querySelectorAll('.close-btn');
     const modals = document.querySelectorAll('.modal'); // Get all modal elements
 
+     function preventTouchMove(event) {
+        event.preventDefault();
+    }
+
     // Function to open a modal
     modalButtons.forEach(button => {
         button.addEventListener('click', () => {
