@@ -3,226 +3,156 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--CSS Styles -->
-    <link rel="stylesheet" href="styles.css" />
+  <!--CSS Styles -->
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Animate CSS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-
-    <title>Jeffrey Tao</title>
-
-
-    <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-    <link rel="manifest" href="Favicon/site.webmanifest">
-
+  <!--Favicon and Title-->
+  <title>Jeffrey Tao</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+  <link rel="manifest" href="Favicon/site.webmanifest">
 </head>
 
 
 <body>
-    <!--Navbar -->
+  <!--Hero -->
+  <section class="hero" id="about">
+    <img src="Images/HERO.jpg" alt="jeffrey-tao" class="hero-img" />
+    <div class="bio">
+      <h1 class="bio-title">Hi! My Name is Jeffrey Tao.</h1>
+      <p class="bio-text">
+        I'M A JUNIOR AT YALE UNIVERSITY MAJORING IN MATHEMATICS.
+      </p>
 
-    <nav>
-        <h1><a style="text-decoration:none" href="#about" name = "name">JEFFREY TAO</a></h1>
-        <ul class="navigation">
-          <li><a href="#more-about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+      <div class="button-container">
+        <button class="modal-btn" data-modal="more-about">About</button>
+        <button class="modal-btn" data-modal="portfolio">Projects</button>
+        <button class="modal-btn" data-modal="contact">Contact</button>
+      </div>
 
-    <!--Hero -->
-
-    <section class="hero" id = "about">
-        <img
-            src="Images/Hero.JPEG"
-            alt="jeffrey-tao"
-            loading="lazy"
-            class="hero-img"/>
-        <div class="bio animate__animated animate__shakeX">
-        <h2 class="bio-title">Hi! My name is Jeffrey Tao.</h2>
-        <p class="bio-text">
-        I'm a second-year student at Yale University with an intended major of Mathematics + Physics.
-        </p>
-
-        <p><a href = "PDFs/Current Resume - Jeffrey Tao copy.pdf">Download my Resume</a></p>
+      <p><a href="PDFs/Current Resume - Jeffrey Tao copy.pdf">Download my Resume</a></p>
     </div>
-    </section>
+  </section>
 
-    <!--About Me -->
+  <!--First Modal: More About-->
+  <div id="more-about" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>About Me</h2>
+      <p>
+        I love problem solving, and I love a good puzzle! I was drawn to mathematics
+        because I really enjoy the problem solving skills and collaboration fostered in this
+        area of study.
+      </p>
+      <p>
+        I'm also very interested in education and education policy. I have volunteered with several nonprofits offering educational
+        services including Sparks Within Reach, Math-M-Addicts, and the National Museum of Mathematics.
+        I have also served as a teaching intern for credit at my high school, and volunteer with the Yale Mathcounts Outreach club which works with local New Haven schools. 
+        I am pursuing a certificate in Education Studies.
+      </p>
+      <p>
+        In my free time I enjoy listening to podcasts, going on walks, and playing the New York Times word games.
+      </p>
+    </div>
+  </div>
+  
+  <!--Second Modal: Projects-->
+  <div id="portfolio" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 class="projects-title">Some of my Recent Projects</h2>
+      <div class="projects-container">
 
-    <section class="more-about">
-        <a class="anchor" id="more-about"></a>
-        <h2>About Me</h2>
-        <p>
-          I love problem solving, and I love a good puzzle! I was drawn to physics and mathematics 
-          because I really enjoy the problem solving skills, quantitative reasoning, and collaboration fostered in these areas of study.
-        </p>
-        <p>
-          I'm also very interested in education and education policy. I have had numerous 
-          opportunities to both develop my skills in this area and learn more about 
-          this issue. I have volunteered with several nonprofits offering educational
-          services including Sparks Within Reach, Math-M-Addicts, and the National Museum of Mathematics.
-          I have also served as teaching intern at my high school, working with students in 9th grade geometry,
-          and volunteer with the Yale Mathcounts Outreach club which works with local New Haven schools. I am 
-          also pursuing a certificate in Education Studies.
-        </p>
-        <p>
-          In my free time I enjoy listening to podcasts, going on walks, and playing the New York Times word games.
-        </p>
-      </section>  
-    
-    <!-- Projects -->
-
-    <section class="projects">
-        <a class="anchor" id="projects"></a>
-        <h2 class="projects-title">Some of my Recent Projects</h2>
-        <div class="projects-container">
-
-
-          <div class="project-container project-card">
-            <img
-              src="Images/Letterloop.png"
-              alt="letterloop"
-              loading="lazy"
-              class="project-pic"
-            />
-            <h3 class="project-title">Letterloop Clone</h3>
-            <p class="project-details">
-              Letterloop is a paid service that allows friends to create private newsletters. 
-              I created my own free version using Google Apps Script.
-            </p>
-            <a href="https://script.google.com/d/1O_btwch-ldCR_A5zVV0gh7N1ALcTqaQEu5t3dtwcbaJguTPMDHneQjr0/edit?usp=sharing" target="_blank" class="project-link">Check it Out</a>
-          </div>
-
-
-          <div class="project-container project-card">
-            <img
-              src="Images/yaipi.png"
-              alt="yaipi"
-              loading="lazy"
-              class="project-pic"
-            />
-            <h3 class="project-title">Yale AI Policy Initiative</h3>
-            <p class="project-details">
-              Work with YAIPI as events head. Previously a Turing Fellow with 
-              a final project uncovering the possible effects of AI on wealth inequality.
-            </p>
-            <a href="https://www.yaleaipolicy.org/" target="_blank" class="project-link">Check it Out</a>
-          </div>
-
-
-          <div class="project-container project-card">
-            <img
-              src="Images/sinai.png"
-              alt="sinai research"
-              loading="lazy"
-              class="project-pic"
-            />
-            <h3 class="project-title">Mount Sinai Research</h3>
-            <p class="project-details">
-              Volunteered for 2 summers at Dr. Stewart's Laboratory: working on uncovering 
-              a more permanent treatment for diabetes in the form of harmine.
-            </p>
-            <a href="PDFs/sinai.pdf" target="_blank" class="project-link">Check it Out</a>
-          </div>
-
-
-          <div class="project-container project-card">
-            <img
-              src="Images/srs.png"
-              alt="symposium"
-              loading="lazy"
-              class="project-pic"
-            />
-            <h3 class="project-title">Science Research Symposium</h3>
-            <p class="project-details">
-              Planned and emceed the annual science research symposium 
-              showcasing student research as well as guest speaker Dr. 
-              Schahram Akbarian.
-            </p>
-            <a href="PDFs/ASRS_FOR_PRINT_FIXED.pdf" target="_blank" class="project-link">Check it Out</a>
-          </div>
-
-
-          <div class="project-container project-card">
-            <img
-              src="Images/bits.png"
-              alt="bits"
-              loading="lazy"
-              class="project-pic"
-            />
-            <h3 class="project-title">Bits CS Magazine</h3>
-            <p class="project-details">
-              Served as editor in chief for two years. Winner of American Scholastic Association- 1st Place Scholastic Magazine Award.
-            </p>
-            <a href="PDFs/BITS-MASTER-2023_READ-1.pdf" target="_blank" class="project-link">Check it Out</a>
-          </div>
-
-
-          <div class="project-container project-card">
-            <img
-              src="Images/coming soon.png"
-              alt="coming soon"
-              loading="lazy"
-              class="project-pic"
-            />
-            <h3 class="project-title">Coming Soon</h3>
-            <p class="project-details">
-            </p>
-            <a href="#" target="_blank" class="project-link"></a>
-          </div>
-
-
+        <div class="project-container project-card">
+          <img src="Images/Letterloop.png" alt="letterloop" loading="lazy" class="project-pic" />
+          <h3 class="project-title">Letterloop Clone</h3>
+          <p class="project-details">
+            Letterloop is a paid service that allows friends to create private newsletters.
+            I created my own free version using Google Apps Script.
+          </p>
+          <a href="https://script.google.com/d/1O_btwch-ldCR_A5zVV0gh7N1ALcTqaQEu5t3dtwcbaJguTPMDHneQjr0/edit?usp=sharing"
+            target="_blank" class="project-link">Check it Out</a>
         </div>
-      </section>  
 
 
-    
-    <!--Social-->
-
-    <section class="contact" id = "contact">
-        <h2>Contact Me</h2>
-        <p>
-          The Best Way to Contact Me is Email: jeffrey.tao@yale.edu
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/in/jeffrey-tao-a2b801217">LinkedIn</a> 
-          | 
-          <a href="https://www.instagram.com/jeffrey._.tao/">Instagram</a> 
-        </p>
-      </section>  
+        <div class="project-container project-card">
+          <img src="Images/yaipi.png" alt="yaipi" loading="lazy" class="project-pic" />
+          <h3 class="project-title">Yale AI Policy Initiative</h3>
+          <p class="project-details">
+            Serve on the YAIPI board, led speaker series initiative. Previously a Turing Fellow with
+            a final project on the possible effects of AI on wealth inequality.
+          </p>
+          <a href="https://www.yaleaipolicy.org/" target="_blank" class="project-link">Check it Out</a>
+        </div>
 
 
-    <!-- Credit -->
-    
-    <section class = "credit">
-        <p>
-            Designed and Built by Jeffrey Tao 2024
-        </p>
+        <div class="project-container project-card">
+          <img src="Images/sinai.png" alt="sinai research" loading="lazy" class="project-pic" />
+          <h3 class="project-title">Mount Sinai Research</h3>
+          <p class="project-details">
+            Volunteered for 2 summers at Dr. Stewart's Laboratory: researching
+            a more permanent treatment for diabetes.
+          </p>
+          <a href="PDFs/sinai.pdf" target="_blank" class="project-link">Check it Out</a>
+        </div>
 
-    </section>
+
+        <div class="project-container project-card">
+          <img src="Images/srs.png" alt="symposium" loading="lazy" class="project-pic" />
+          <h3 class="project-title">Science Research Symposium</h3>
+          <p class="project-details">
+            Launched the science research symposium
+            showcasing student research as well as guest speaker Dr.
+            Schahram Akbarian.
+          </p>
+          <a href="PDFs/ASRS_FOR_PRINT_FIXED.pdf" target="_blank" class="project-link">Check it Out</a>
+        </div>
 
 
+        <div class="project-container project-card">
+          <img src="Images/bits.png" alt="bits" loading="lazy" class="project-pic" />
+          <h3 class="project-title">Bits CS Magazine</h3>
+          <p class="project-details">
+            Served as editor in chief for two years. Winner of American Scholastic Association- 1st Place Scholastic
+            Magazine Award.
+          </p>
+          <a href="PDFs/BITS-MASTER-2023_READ-1.pdf" target="_blank" class="project-link">Check it Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Ion icons scripts -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    
+  <!--Third Modal: Contact-->
+  <div id="contact" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Contact Me</h2>
+      <p>
+        The Best Way to Contact Me is Email: jeffrey.tao@yale.edu
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/jeffrey-tao-a2b801217">LinkedIn</a>
+        |
+        <a href="https://www.instagram.com/jeffrey._.tao/">Instagram</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Credit -->
+  <section class="credit">
+    <p>
+      Designed and Built by Jeffrey Tao 2025
+    </p>
+  </section>
+
+  <!-- Scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="script.js"></script>
+
 </body>
-
 </html>

@@ -6,16 +6,18 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #e9d3d0;
-  --primary-color: #8093f1;
-  --secondary-color: #b388eb;
-  --primary-shadow: #2e3532;
+  --bg-color: #d7e0eb;
+  --primary-color: #061a40;
+  --secondary-color: #0353A4;
+  --button-color: #9c95dc;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
   --transition: 0.3s;
 }
+
 /* Variables end */
+
 
 html {
   scroll-behavior: smooth;
@@ -28,271 +30,317 @@ html {
   box-sizing: border-box;
 }
 
-/* Navbar */
-
-ul {
-    list-style-type: none;
-}
-  
-a:not([name = "name"]) {
-    text-decoration: none;
-    color: var(--primary-color);
-}
-  
-a:hover:not([name = "name"]) {
-    color: var(--secondary-color);
-}
-  
 body {
-    font-family: var(--font-family);
-}
-  
-nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 3.5rem;
-    background-color: var(--bg-color);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
 }
 
-nav a:not([name = "name"]) {
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-nav a:hover:not([name = "name"]) {
+a {
+    text-decoration: none;
     color: var(--secondary-color);
-    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1rem;
 }
   
-nav ul {
-    display: flex;
-    gap: 1.9rem;
-}
-  
-nav ul li {
-    font-weight: var(--bold-font);
+a:hover {
+    color: var(--button-color);
 }
 
+/*hero section */
 
-nav h1 a.visited {
-    color:black;
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 68.75rem;
+  margin: auto;
+  min-height: 100vh;
 }
 
-nav h1 a:link{
-    color:black;
-  }
-nav h1 a:visited{
-    color:black;
-  }
-nav h1 a:hover{
-    color:black;
-  }
- nav h1 a:focus{
-    color:black;
-  }
-nav h1 a:active{
-    color:black;
+.hero img {
+  height: 35rem;
+  width: 35rem;
+  border: 2.5px solid var(--secondary-color); /* Adds a 5px solid border using your defined secondary color */
+  border-radius: 100px; /* Rounds the corners of the border */
+}
+
+.bio {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--secondary-color);
+  padding: 12px 24px;
+  font-size: 1.25rem;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.bio h1 {
+  color: var(--primary-color);
+  margin-bottom: var(--bottom-margin);
+  font-size: 3.5rem;
+}
+
+.bio p {
+  color: var(--secondary-color);
+  line-height: var(--line-height);
+  padding: 0.3rem 0;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+  /* For button centering */
+}
+
+.button-container {
+  display: flex; /* Make the container a flex container */
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 16px; /* Add spacing between the buttons */
+}
+
+.modal-btn {
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  padding: 14px 20px;
+  /* Remove the individual button margin, as gap handles it */
+  /* margin: 8px; */
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 750px;
+  border-radius: 5px;
+  position: relative;
+}
+
+#portfolio .modal-content {
+  margin: 2% auto; /* Adjust this value (e.g., 2% or any pixel value) to your liking for the projects modal */
+  width: 90%;
+  max-width: 1250px;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
   }
 
+  to {
+    opacity: 1
+  }
+}
 
-  /*hero section */
-  
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color:var(--primary-color);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+
+
+
+/*more about */
+
+#more-about {
+  padding: 1rem 6rem;
+  background-color: var(--bg-color);
+}
+
+#more-about h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--bottom-margin);
+  text-align: center;
+}
+
+#more-about p {
+  color: var(--primary-color);
+  line-height: var(--line-height);
+  padding: 0.4rem;
+}
+
+/*projects*/
+
+#portfolio {
+  background-color: var(--bg-color);
+  padding: 32px 0;
+  margin-top: 2rem;
+}
+
+.projects h2 {
+  color: white;
+}
+
+.project-pic {
+  width: 65%;
+  height: 60%;
+}
+
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project-container {
+  text-align: center;
+  width: 21.875rem;
+  padding: 1rem;
+}
+
+.project-container p {
+  padding: 0.4rem;
+}
+
+.project-title {
+  margin-bottom: var(--bottom-margin);
+  margin-top: var(--bottom-margin);
+}
+
+.project-details {
+  margin-bottom: var(--bottom-margin);
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--primary-shadow);
+  padding: 20px;
+  margin: 10px;
+}
+
+
+/*contact*/
+
+#contact {
+  padding: 1rem 6rem;
+  background-color: var(--bg-color);
+}
+
+#contact h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--bottom-margin);
+  text-align: center;
+}
+
+#contact p {
+  color: var(--primary-color);
+  line-height: var(--line-height);
+  text-align: center;
+  padding: 0.4rem;
+}
+
+/*credit*/
+
+.credit {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8em;
+  position: fixed; /* Positions the element relative to the viewport */
+  bottom: 0rem; /* Aligns it to the bottom of the viewport */
+  width: 100%; /* Makes it span the full width of the viewport */
+  color: var(--primary-color); /* Adjust text color as needed */
+  background-color: var(--bg-color); /* Background color to match the page */
+  z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+@media screen and (max-width: 720px) {
+
+  /*changes reflects on screen with a width of 720px and below*/
+
   .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-    max-width: 68.75rem;
-    margin: auto;
+        flex-direction: column;
+        margin-top: auto;
+        gap: 0;
   }
 
   .hero img {
-    height: 50 rem;
-    width: 37.5rem;
+    width: 90%;
+    height: auto; /* Allow height to adjust proportionally */
+    object-position: center top; /* Optional: adjust focus if needed */
   }
-  
+
   .bio {
-    width: 25rem;
-    padding: 0.625rem;
-    border-radius: 6px;
-    box-shadow: 0px 2px 15px 2px var(--primary-shadow);
-  }
-  
-  .bio h2 {
-    color:var(--primary-shadow);
-    margin-bottom: var(--bottom-margin);
-  }
-  
-  .bio p {
-    color:var(--primary-shadow);
-    line-height: var(--line-height);
-    padding: 0.3rem 0;
+    margin-top: 1rem; /* Reduce top margin from 5rem */
+    width: 90%; /* Make width relative to viewport, instead of fixed rem */
+    max-width: 350px; /* Prevent it from becoming too wide on larger phones */
+    padding: 0 1rem; /* Add some horizontal padding */
   }
 
-
-  /*more about */
-
-  .more-about {
-    padding: 1rem 6rem;
+  .modal-content {
+    width: 100%;
+    margin-bottom: 5rem;
   }
 
-
-.anchor {
-    display: block;
-    position: relative;
-    top: -8vh;
-    visibility: hidden;
-}
-  
-  .more-about h2 {
-    color: var(--primary-shadow);
-    margin-bottom: var(--bottom-margin);
-    text-align: center;
+  #portfolio .modal-content {
+    margin-bottom: 5rem; 
   }
-  
-  .more-about p {
-    color: var(--primary-shadow);
-    line-height: var(--line-height);
-    padding: 0.4rem;
-  }
-  
-/*projects*/
 
-  .projects {
-    background-color: var(--primary-shadow);
-    padding: 32px 0;
+  #more-about p {
+    text-align: left; /* Ensure paragraph text is left-aligned for better readability on narrow screens */
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  #more-about {
     margin-top: 2rem;
+    padding: 1rem 3.5rem;
   }
 
-  .projects h2{
-    color:white;
-  }
-  
-  .project-pic {
-    width: 65%;
-    height: 60%;
-  }
-  
-  .projects-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  #contact {
+    margin-top: 2rem;
+    padding: 1rem 3.5rem;
   }
 
-  .projects-title {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .project-container {
-    text-align: center;
-    width: 21.875rem;
-    padding: 1rem;
-  }
-  
-  .project-container p {
-    padding: 0.4rem;
-  }
-  
-  .project-title {
-    margin-bottom: var(--bottom-margin);
-    margin-top: var(--bottom-margin);
-  }
-  
-  .project-details {
-    margin-bottom: var(--bottom-margin);
-  }
-  
-  .project-card {
-    background-color: #fff;
-    border-radius: 11px;
-    box-shadow: 0 3px 10px var(--primary-shadow);
-    padding: 20px;
-    margin: 10px;
-  }
-  
-  /*contact*/
-
-  .contact {
-    padding: 1rem 6rem;
-  }
-  
-  .contact h2 {
-    color: var(--primary-shadow);
-    margin-bottom: var(--bottom-margin);
-    text-align: center;
-  }
-  
-  .contact p {
-    color: var(--primary-shadow);
-    line-height: var(--line-height);
-    text-align: center;
-    padding: 0.4rem;
+  .credit{
+    padding: 0.25rem;
   }
 
-  /*credit*/
-
-  .credit {
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.1rem;
-    font-size: 0.8em;
-    }
-
-
-  @media screen and (max-width: 720px) {
-    /*changes reflects on screen with a width of 720px and below*/
-    nav {
-        padding: 1.5rem 1rem;
-      }    
-
-      .hero {
-        margin-top: -4rem;
-        flex-direction: column;
-        gap: 0;
-      }
-    
-      .hero img {
-            width: 100%;
-        }
-    
-      .bio {
-        margin-top: 5rem;
-        width: 20.5rem;
-      }
-
-      
-      .more-about {
-        margin-top: 2rem;
-        padding: 1rem 3.5rem;
-      }
-
-      .anchor {
-        display: block;
-        position: relative;
-        top: -14vh;
-        visibility: hidden;
-    }
-    
-      .more-about h2 {
-        text-align: center;
-      }
-    
-      .more-about p {
-        text-align: justify;
-      }
-
-      .contact {
-        margin-top: 2rem;
-        padding: 1rem 3.5rem;
-      }
-    
 }
