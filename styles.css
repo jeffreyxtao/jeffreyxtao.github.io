@@ -18,6 +18,11 @@
 
 /* Variables end */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
 
 html {
   scroll-behavior: smooth;
@@ -37,9 +42,11 @@ body.modal-open {
   right: 0;        
   bottom: 0;       
   overflow: hidden; 
+  -webkit-overflow-scrolling: auto;
 }
 
 html.modal-open {
+  height: 100%;
   overflow: hidden;
 }
 
