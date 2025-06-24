@@ -30,10 +30,19 @@ html {
   box-sizing: border-box;
 }
 
-body.modal-open,
+body.modal-open {
+  position: fixed; 
+  top: 0;       
+  left: 0;      
+  right: 0;        
+  bottom: 0;       
+  overflow: hidden; 
+}
+
 html.modal-open {
   overflow: hidden;
 }
+
 
 body {
   background-color: var(--bg-color);
